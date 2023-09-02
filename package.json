@@ -35,9 +35,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "https://pr-movies-explorer.nomoreparties.co/api",
-  "main": "index.js",
-  "author": "Mila Ganaga",
-  "license": "ISC"
+  }
 }
+
