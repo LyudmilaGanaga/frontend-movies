@@ -1,0 +1,39 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width:898px) {
+  .main {
+    gap: 90px;
+  }
+}
+
+@media screen and (max-width:525px) {
+  .main {
+    gap: 70px;
+  }
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding: 0;
+}
+
+@media screen and (max-width:898px) {
+  .main__container {
+    gap: 90px;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width:525px) {
+  .main__container {
+    gap: 70px;
+  }
+}
