@@ -52,6 +52,7 @@ export default function Login({
           </label>
           <input
             noValidate
+            pattern="\w+@\w+\.\w+"
             placeholder="Ваш e-mail"
             className="auth__input"
             id="email"

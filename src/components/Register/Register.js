@@ -85,6 +85,7 @@ export default function Register({
           </label>
           <input
             noValidate
+            pattern="\w+@\w+\.\w+"
             className="auth__input"
             placeholder="Введите e-mail"
             id="email"

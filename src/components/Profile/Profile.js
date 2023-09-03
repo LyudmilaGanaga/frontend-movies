@@ -108,6 +108,7 @@ export default function Profile({
               {errors.email ? errors.email : "Email"}
             </label>
             <input
+            pattern="\w+@\w+\.\w+"
               className="profile__input"
               placeholder={edit ? email : email}
               id="email"
@@ -115,7 +116,7 @@ export default function Profile({
               type="email"
               value={values.email ?? email}
               onChange={handleChange}
-              required
+              noValidate
             />
           </div>
         </div>
