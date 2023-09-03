@@ -3,7 +3,14 @@ import { useNavigate } from "react-router-dom";
 import "./NotFound.css";
 
 function NotFound() {
+  
   const navigate = useNavigate();
+
+  // setTimeout(() => {
+  //   navigate(-1)
+  // }, 2000);
+
+  
   return (
     <section className="error">
       <div className="error__container">

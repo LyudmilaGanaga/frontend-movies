@@ -66,25 +66,25 @@ export default function Register({
             Имя
           </label>
           <input
-            noValidate
+            required
             placeholder="Введите имя"
             className="auth__input"
             id="name"
             name="name"
             type="name"
             minLength="2"
-            maxLength="40"
+            maxLength="30"
             value={values?.name || ""}
             onChange={handleChange}
           />
 
-          <span className="auth__line">{errors.name}</span>
+<span className="auth__line">{errors.name}</span>
 
           <label htmlFor="name" className="auth__name">
             E-mail
           </label>
           <input
-            noValidate
+            required
             pattern="\w+@\w+\.\w+"
             className="auth__input"
             placeholder="Введите e-mail"
@@ -109,6 +109,7 @@ export default function Register({
             onChange={handleChange}
             required
           />
+          <span className="auth__line">{errors.password}</span>
         </>
       }
       authButton={"Зарегистрироваться"}

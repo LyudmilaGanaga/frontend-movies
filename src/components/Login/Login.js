@@ -51,8 +51,7 @@ export default function Login({
             E-mail
           </label>
           <input
-            noValidate
-            pattern="\w+@\w+\.\w+"
+            required
             placeholder="Ваш e-mail"
             className="auth__input"
             id="email"
@@ -67,7 +66,7 @@ export default function Login({
             Пароль
           </label>
           <input
-            noValidate
+            required
             className="auth__input"
             placeholder=""
             id="password"

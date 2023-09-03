@@ -93,6 +93,8 @@ export default function Profile({
               id="name"
               name="name"
               type="name"
+              minLength="2"
+              maxLength="30"
               value={values.name ?? name}
               onChange={handleChange}
               required
@@ -108,7 +110,7 @@ export default function Profile({
               {errors.email ? errors.email : "Email"}
             </label>
             <input
-            pattern="\w+@\w+\.\w+"
+              pattern="\w+@\w+\.\w+"
               className="profile__input"
               placeholder={edit ? email : email}
               id="email"

@@ -198,4 +198,5 @@
   transition: 0.8s;
   color: #C2C2C2;
   background: #F8F8F8;
+  cursor: not-allowed;
 }
