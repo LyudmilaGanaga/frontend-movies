@@ -179,3 +179,23 @@
   margin-top: 6px;
   margin-bottom: 0;
 }
+
+.auth__button-container--active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  margin-top: 133px;
+  margin-bottom: 16px;
+  padding: 0;
+  height: 45px;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  transition: 0.8s;
+  color: #C2C2C2;
+  background: #F8F8F8;
+}

@@ -9,6 +9,7 @@ function Auth({
   authChoice,
   onSubmit,
   errorInfo,
+  isValid,
 }) {
   
   return (
@@ -22,7 +23,7 @@ function Auth({
         {authInput}
 
         <span className="auth__line">{errorInfo}</span>
-        <button type="submit" className="auth__button-container">
+        <button type="submit" className={isValid ? "auth__button-container" : "auth__button-container--active"}>
           {authButton}
         </button>
       </form>
