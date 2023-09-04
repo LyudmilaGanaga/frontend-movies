@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import "../SearchForm/SearchForm.css";
 import FilterCheckbox from "./FilterCheckbox/FilterCheckbox.js";
 import useForm from "../../../hooks/useForms";
+import { ERROR_INFO } from "../../../utils/constants";
 
 function SearchForm({
   handleSearch,
@@ -34,7 +35,7 @@ function SearchForm({
   function handleSubmit(e) {
     e.preventDefault();
     if (!isValid) {
-      setErrorText("Необходимо ввести название фильма");
+      setErrorText(ERROR_INFO.MOVIE_NAME_MUST_BE_ENTERED);
       return;
     }
     handleSearch(values);

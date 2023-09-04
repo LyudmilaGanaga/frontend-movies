@@ -5,20 +5,25 @@ import "./Navigation.css";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu/BurgerMenu";
+import {
+  MAIN_ROUTE,
+  MOVIES,
+  SAVED_MOVIES,
+} from "../../utils/constants";
 
 function Navigation() {
   return (
     <nav className="navigation">
-      <Link to="/" className="header__logo">
+      <Link to={MAIN_ROUTE} className="header__logo">
         <img src={headerLogo} alt="Лого" />
       </Link>
 
       <div className="navigation__menu">
         <div className="navigation__box">
-          <NavLink to="/movies" className="navigation__text">
+          <NavLink to={MOVIES} className="navigation__text">
             Фильмы
           </NavLink>
-          <NavLink to="/saved-movies" className="navigation__text">
+          <NavLink to={SAVED_MOVIES} className="navigation__text">
             Сохранённые фильмы
           </NavLink>
         </div>

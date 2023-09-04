@@ -1,5 +1,6 @@
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from "../Preloader/Preloader";
+import { ERROR_INFO } from "../../../utils/constants";
 
 function DisplayError({ error }) {
   return <p className="erroMessage">{error}</p>;
@@ -14,13 +15,12 @@ function SearchError({
 }) {
   return error ? (
     <DisplayError
-      error="Во время запроса произошла ошибка. Возможно, проблема с 
-    соединением или сервер недоступен. Подождите немного и попробуйте ещё раз"
+      error={ERROR_INFO.ERROR_DURING_QUERY}
     />
   ) : isLoading ? (
     <Preloader />
   ) : foundMovies.length === 0 ? (
-    <DisplayError error="Ничего не найдено" />
+    <DisplayError error={ERROR_INFO.NOTHING_FOUND} />
   ) : (
     <MoviesCardList
       foundMovies={foundMovies}

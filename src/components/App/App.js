@@ -18,12 +18,22 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import Navigation from "../Navigation/Navigation";
 import NavTab from "../Main/NavTab/NavTab";
 import NotFound from "../NotFound/NotFound";
+import { ERROR_INFO } from "../../utils/constants";
+import {
+  MAIN_ROUTE,
+  ERROR_404,
+  SIGN_IN,
+  SIGN_UP,
+  MOVIES,
+  SAVED_MOVIES,
+  PROFILE,
+} from "../../utils/constants";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [savedFilms, setSavedFilms] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [errorInfo, setErrorInfo] = useState("");
 
   const token = localStorage.getItem("token");
@@ -34,17 +44,17 @@ function App() {
   function displayErrors(err) {
     switch (err) {
       case "Ошибка: 401":
-        setErrorInfo("Вы ввели неправильный логин или пароль.");
+        setErrorInfo(ERROR_INFO.YOU_ENTERED_WRONG_LOGIN_OR_PASSWORD);
         break;
       case "Ошибка: 409":
-        setErrorInfo("Пользователь с таким email уже существует");
+        setErrorInfo(ERROR_INFO.USER_ALREADY_EXSISTS);
         break;
       case "Ошибка: 500":
-        setErrorInfo("На сервере произошла ошибка.");
+        setErrorInfo(ERROR_INFO.SERVER_ERROR);
         break;
 
       default:
-        setErrorInfo("При выполнении действия произошла ошибка.");
+        setErrorInfo(ERROR_INFO.ACTION_ERROR);
         console.log(err);
     }
   }
@@ -129,7 +139,7 @@ function App() {
     localStorage.removeItem("searchMoviesList");
 
     setLoggedIn(false);
-    navigate("/");
+    navigate(MAIN_ROUTE);
   }
 
   return (
@@ -137,33 +147,34 @@ function App() {
       <div className="app">
         {loggedIn ? (
           <Navigation />
-        ) : pathname === "/sign-up" ? null : pathname === "/sign-in" ? null : (
+        ) : pathname === SIGN_UP ? null : pathname === SIGN_IN ? null : (
           <NavTab />
         )}
         <Routes>
-          <Route path="/" element={<Main loggedIn={loggedIn} />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path={MAIN_ROUTE} element={<Main loggedIn={loggedIn} />} />
+          <Route path={ERROR_404} element={<NotFound />} />
           <Route
-            path="/sign-in"
+            path={SIGN_IN}
             element={
               loggedIn ? (
-                <Navigate to={"/movies"} />
+                <Navigate to={MOVIES} />
               ) : (
                 <Login
                   setIsLoading={setIsLoading}
                   setLoggedIn={setLoggedIn}
                   errorInfo={errorInfo}
                   displayErrors={displayErrors}
+                  isLoading={isLoading}
                 />
               )
             }
           />
 
           <Route
-            path="/sign-up"
+            path={SIGN_UP}
             element={
               loggedIn ? (
-                <Navigate to={"/movies"} />
+                <Navigate to={MOVIES} />
               ) : (
                 <Register
                   setIsLoading={setIsLoading}
@@ -171,13 +182,14 @@ function App() {
                   setCurrentUser={setCurrentUser}
                   errorInfo={errorInfo}
                   displayErrors={displayErrors}
+                  isLoading={isLoading}
                 />
               )
             }
           />
 
           <Route
-            path="/movies"
+            path={MOVIES}
             element={
               <ProtectedRoute
                 loggedIn={loggedIn}
@@ -192,7 +204,7 @@ function App() {
           />
 
           <Route
-            path="/saved-movies"
+            path={SAVED_MOVIES}
             element={
               <ProtectedRoute
                 element={SavedMovies}
@@ -205,7 +217,7 @@ function App() {
           />
 
           <Route
-            path="/profile"
+            path={PROFILE}
             element={
               <ProtectedRoute
                 element={Profile}
@@ -220,7 +232,6 @@ function App() {
               />
             }
           />
-
         </Routes>
       </div>
     </CurrentUserContext.Provider>

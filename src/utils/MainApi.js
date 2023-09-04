@@ -1,4 +1,6 @@
-export const BASE_URL = "https://pr-movies-explorer.nomoreparties.co";
+import {
+  BASE_URL
+} from "../utils/constants";
 
 function checkServer(res) {
   if (res.ok) {

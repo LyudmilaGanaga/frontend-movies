@@ -10,8 +10,11 @@ function Auth({
   onSubmit,
   errorInfo,
   isValid,
+  isLoading,
 }) {
-  
+  const buttonColor = isValid
+    ? "auth__button-container"
+    : "auth__button-container_active";
   return (
     <div className="auth">
       <Link to="/" className="header__logo">
@@ -23,8 +26,16 @@ function Auth({
         {authInput}
 
         <span className="auth__line">{errorInfo}</span>
-        <button type="submit" className={isValid ? "auth__button-container" : "auth__button-container--active"}>
-          {authButton}
+        <button
+          type="submit"
+          className={
+            isLoading
+              ? `${buttonColor} auth__button-container_loading`
+              : buttonColor
+          }
+          disabled={isLoading || !isValid}
+        >
+          {isLoading ? "Отправка..." : authButton}
         </button>
       </form>
       {authChoice}

@@ -1,11 +1,15 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../MoviesCard/MoviesCard.css";
+import {
+  MOVIES,
+  SAVED_MOVIES
+} from "../../../utils/constants";
 
 function MoviesCard({ movie, savedCard, onCardClick }) {
   const { pathname } = useLocation();
-  const moviesPathname = pathname === "/movies";
-  const savedMoviesPathname = pathname === "/saved-movies";
+  const moviesPathname = pathname === MOVIES;
+  const savedMoviesPathname = pathname === SAVED_MOVIES;
 
   function displayDuration(duration) {
     const hours = Math.floor(duration / 60);

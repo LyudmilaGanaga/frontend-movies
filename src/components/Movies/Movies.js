@@ -4,6 +4,7 @@ import SearchForm from "./SearchForm/SearchForm";
 import Footer from "../Footer/Footer";
 import SearchError from "../Movies/SearchForm/SearchError";
 import * as moviesApi from "../../utils/MoviesApi";
+import { schemaFields } from '../../utils/constants';
 
 function Movies({
   setIsLoading,
@@ -33,22 +34,6 @@ function Movies({
     localStorage.setItem("switchCheckbox", flitredByCheckbox);
   }, [searchMoviesList, flitredByCheckbox, searchQuery]);
 
-  // данные из схемы
-  const schemaFields = (movie) => {
-    return {
-      country: movie.country,
-      director: movie.director,
-      duration: movie.duration,
-      year: movie.year,
-      description: movie.description,
-      image: `https://api.nomoreparties.co${movie.image.url}`,
-      movieId: movie.id,
-      trailerLink: movie.trailerLink,
-      thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,
-      nameRU: movie.nameRU,
-      nameEN: movie.nameEN,
-    };
-  };
 
   async function getCards() {
     setError(false);

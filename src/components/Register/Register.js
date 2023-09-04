@@ -4,13 +4,19 @@ import useFormWithValidation from "../../hooks/useFormWithValidation";
 import * as mainApi from "../../utils/MainApi";
 import "./Register.css";
 import Auth from "../Auth/Auth";
+import {
+  MOVIES,
+} from "../../utils/constants";
 
 export default function Register({
   setIsLoading,
+  isLoading,
   setLoggedIn,
   errorInfo,
   displayErrors,
 }) {
+
+  
   const navigate = useNavigate();
 
   async function handleRegister({ name, email, password }) {
@@ -34,7 +40,7 @@ export default function Register({
         if (res.token) {
           localStorage.setItem("token", res.token);
           setLoggedIn(true);
-          navigate("/movies");
+          navigate(MOVIES);
         }
       })
       .catch((err) => {
@@ -55,8 +61,10 @@ export default function Register({
 
   return (
     <Auth
+    isLoading={isLoading}
       authTitle={"Добро пожаловать"}
       onSubmit={handleSubmit}
+      onChange={handleChange}
       method="POST"
       isValid={isValid}
       errorInfo={errorInfo}

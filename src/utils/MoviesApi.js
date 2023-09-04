@@ -1,4 +1,6 @@
-export const MOVIES_URL = "https://api.nomoreparties.co/beatfilm-movies";
+import {
+  MOVIES_URL
+} from "../utils/constants";
 
 export const getJson = (res) => {
   if (res.ok) {

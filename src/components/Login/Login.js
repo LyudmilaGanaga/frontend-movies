@@ -11,6 +11,8 @@ export default function Login({
   setIsLoading,
   errorInfo,
   displayErrors,
+  isLoading,
+  // loggedIn,
 }) {
   const navigate = useNavigate();
 
@@ -43,7 +45,10 @@ export default function Login({
     <Auth
       authTitle={"Рады видеть"}
       onSubmit={handleSubmit}
+      onChange={handleChange}
+      isLoading={isLoading}
       isValid={isValid}
+      values={values}
       errorInfo={errorInfo}
       authInput={
         <>
@@ -52,6 +57,7 @@ export default function Login({
           </label>
           <input
             required
+            pattern="\w+@\w+\.\w+"
             placeholder="Ваш e-mail"
             className="auth__input"
             id="email"
