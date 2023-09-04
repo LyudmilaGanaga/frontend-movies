@@ -118,7 +118,7 @@ export default function Profile({
               type="email"
               value={values.email ?? email}
               onChange={handleChange}
-              noValidate
+              required
             />
           </div>
         </div>
