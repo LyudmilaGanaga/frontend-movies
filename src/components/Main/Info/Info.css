@@ -1,0 +1,39 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 89.063%;
+}
+
+@media screen and (max-width:898px) {
+  .info {
+    width: 86.979%;
+  }
+}
+
+@media screen and (max-width:525px) {
+  .info {
+    width: 89.25%;
+  }
+}
+
+.info__heading {
+  color: #FFF;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.88px;
+  margin: 0 0 23px;
+}
+
+@media screen and (max-width:525px) {
+  .info__heading {
+    font-size: 18px;
+    letter-spacing: -0.72px;
+    margin-bottom: 28px;
+  }
+}
+
+.info__line {
+  border: 1px solid #dadada;
+}

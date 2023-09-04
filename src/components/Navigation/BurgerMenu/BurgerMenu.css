@@ -1,0 +1,141 @@
+.burgerMenu {
+  display: none;
+}
+
+@media screen and (max-width: 898px) {
+  .burgerMenu {
+    display: block;
+    margin-top: 4px;
+  }
+
+  .burgerMenu__button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.3s linear;
+  }
+
+  .burgerMenu__button:hover {
+    opacity: 0.7;
+  }
+
+  .burgerMenu__close {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.8s linear;
+  }
+
+  .burgerMenu__close:hover {
+    opacity: 0.7;
+  }
+
+  .burgerMenu__state-active {
+    background-color: #202020;
+  }
+
+  .burgerMenu__link {
+    color: #FFF;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .burgerMenu__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+    position: fixed;
+  }
+
+  .burgerMenu__state-active {
+    top: 0;
+    width: 67.7%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .burgerMenu__close {
+    display: flex;
+    justify-content: flex-end;
+    top: 22.44px;
+    right: 22.44px;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 525px) {
+    .burgerMenu__close {
+      top: 13.44px;
+      right: 13.44px;
+    }
+  }
+
+  .burgerMenu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    padding-left: 0;
+    margin: 159px 0 0;
+  }
+
+  @media screen and (max-width: 525px) {
+    .burgerMenu__links {
+      margin: 144px 0 0;
+      gap: 24px;
+    }
+  }
+
+  .burgerMenu__link {
+    color: #FFF;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+  }
+
+  .burgerMenu__link:hover {
+    border-bottom: 2px solid #000;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .burgerMenu__state-active {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .burgerMenu__img {
+    width: 38px;
+    height: 41px;
+  }
+}
+
+.burgerMenu__account-show {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 90px;
+  gap: 7;
+}
+
+@media screen and (max-width: 525px) {
+  .burgerMenu__account-show {
+    margin: 0 auto 46px;
+  }
+}

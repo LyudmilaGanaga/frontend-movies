@@ -1,0 +1,268 @@
+.moviesCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0;
+}
+
+@media screen and (max-width: 1150px) {
+  .moviesCard:nth-child(n+9):nth-child(-n+16) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .moviesCard:nth-child(n+6):nth-child(-n+16) {
+    display: none;
+  }
+
+  .moviesCard__saved:nth-child(n+3) {
+    display: none;
+  }
+}
+
+.moviesCard__photo {
+  object-fit: cover;
+  max-width: 100%;
+  height: 151px;
+}
+
+
+@media screen and (max-width: 700px) {
+  .moviesCard__photo {
+    min-height: 190px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .moviesCard__photo {
+    min-height: 168px;
+  }
+}
+
+.moviesCard__container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  min-height: 59px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #424242;
+}
+
+@media screen and (max-width: 898px) {
+  .moviesCard__container {
+    column-gap: 8px;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.moviesCard__text {
+  margin: 14px 0 13px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0;
+  white-space: wrap;
+}
+
+@media screen and (max-width: 898px) {
+  .moviesCard__text {
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .moviesCard__text {
+    margin-top: 14px;
+    font-size: 12px;
+  }
+}
+
+.moviesCard__time {
+  color: #8B8B8B;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 6px 0 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 525px) {
+  .moviesCard__time {
+    font-size: 10px;
+  }
+}
+
+.moviesCard__button-save {
+  padding: 0;
+  border: none;
+  background: none;
+  width: 24px;
+  height: 24px;
+  margin: 10px 0 25px;
+  cursor: pointer;
+  transition: 0.3s linear;
+  background-image: url(../../../images/saveLikeNo.svg);
+}
+
+.moviesCard__button-save_activ {
+  padding: 0;
+  border: none;
+  width: 24px;
+  height: 24px;
+  margin: 10px 0 25px;
+  cursor: pointer;
+  transition: 0.3s linear;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-image: url(../../../images/saveLike.svg);
+}
+
+.moviesCard__button-save_deleteBtn {
+  padding: 0;
+  border: none;
+  width: 24px;
+  height: 24px;
+  margin: 10px 0 25px;
+  cursor: pointer;
+  transition: 0.3s linear;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-image: url(../../../images/deleteMovie.svg);
+}
+
+.moviesCard__button-save:hover {
+  opacity: 0.8;
+}
+
+.moviesCard__photo:hover+.moviesCard__button-save {
+  opacity: 0.8;
+}
+
+
+/* .moviesCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0;
+}
+
+@media screen and (max-width: 1150px) {
+  .moviesCard:nth-child(n+9):nth-child(-n+16) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .moviesCard:nth-child(n+6):nth-child(-n+16) {
+    display: none;
+  }
+
+  .moviesCard__saved:nth-child(n+3) {
+    display: none;
+  }
+}
+
+.moviesCard__photo {
+  object-fit: cover;
+  max-width: 100%;
+  height: 151px;
+}
+
+
+@media screen and (max-width: 700px) {
+  .moviesCard__photo {
+    height: 190px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .moviesCard__photo {
+    height: 168px;
+  }
+}
+
+.moviesCard__container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  min-height: 59px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #424242;
+}
+
+@media screen and (max-width: 898px) {
+  .moviesCard__container {
+    column-gap: 8px;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.moviesCard__text {
+  margin: 14px 0 13px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0;
+  white-space: wrap;
+}
+
+@media screen and (max-width: 898px) {
+  .moviesCard__text {
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .moviesCard__text {
+    margin-top: 14px;
+    font-size: 12px;
+  }
+}
+
+.moviesCard__time {
+  color: #8B8B8B;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 6px 0 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 525px) {
+  .moviesCard__time {
+    font-size: 10px;
+  }
+}
+
+.moviesCard__button-save {
+  padding: 0;
+  border: none;
+  background: none;
+  width: 24px;
+  height: 24px;
+  margin: 10px 0 25px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+.moviesCard__button-save_activ {
+  margin: 0;
+  border: 0;
+}
+
+.moviesCard__button-save:hover {
+  opacity: 0.8;
+}
+
+.moviesCard__photo:hover+.moviesCard__button-save {
+  opacity: 0.8;
+} */
